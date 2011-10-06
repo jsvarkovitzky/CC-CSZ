@@ -378,6 +378,15 @@ def setgeo(rundata):
     # [t1,t2,noutput,x1,x2,y1,y2,xpoints,ypoints,\
     #  ioutarrivaltimes,ioutsurfacemax]
 
+    # -------------------
+    # Fixed Grid settings
+    # ------------------- 
+
+    geodata.fixedgrids = []
+
+    geodata.fixedgrids.append([0,3600,20,234.75,236.12,41.42,42.53,200,200,0,1])
+
+
     return rundata
     # end of function setgeo
     # ----------------------

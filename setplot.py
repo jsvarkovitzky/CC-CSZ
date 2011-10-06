@@ -310,6 +310,23 @@ def setplot(plotdata):
 
     #plotaxes.afteraxes = plot_dart
 
+    # -----------------
+    # Fixed grid plots:
+    # -----------------
+
+    if setplotfg is not None:
+
+        # Repeat as desired for other fixed grids...
+        # These show up when using 'make .plots'
+        fgno = 1
+        otherfig = plotdata.new_otherfigure('Fixed Grid %s' % fgno)
+        sfgno = str(fgno).zfill(2)  # e.g. '01'
+        otherfig.fname = '_PlotIndex_FixedGrid%s.html' % sfgno
+        def make_fgplots(plotdata):
+            fgdata = setplotfg(fgno, outdir=plotdata.outdir)
+            # See the setplotfg function for setting up fixed grid plots
+            fgdata.fg2html(framenos='all')
+        otherfig.makefig = make_fgplots
 
 
     #-----------------------------------------
